@@ -3,6 +3,7 @@ import Navbar from './components/navbar/Navbar'
 import axios from 'axios'
 import './App.css'
 import Cards from  './components/cards/Cards'
+import { Link } from 'react-router-dom'
 
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
       <Navbar/>
      
       <div >
+        <Link to = {'/add'}>
          <button className='btn'>ADD NEW JEWELLERY</button>
+         </Link>
         </div>
       <div className='card-container'>
       {
