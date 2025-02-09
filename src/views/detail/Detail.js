@@ -20,11 +20,11 @@ function Detail() {
       if (window.confirm('Are you sure you want to delete this car?')) {
         try {
           await axios.delete(`http://localhost:5001/jewelries/${id}`);
-          toast.success('Car deleted successfully!');
+          toast.success('jewelerie deleted successfully!');
           setTimeout(() => navigate(-1), 2000); 
         } catch (err) {
-          console.error('Error deleting car:', err);
-          toast.error('Failed to delete the car. Please try again.');
+          console.error('Error deleting jewelerie:', err);
+          toast.error('Failed to delete the jewelerie. Please try again.');
         }
       }
     };
