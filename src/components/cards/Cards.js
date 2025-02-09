@@ -1,9 +1,10 @@
 import React from 'react'
 import './Cards.css'
+import { Link } from'react-router-dom';
 
 function Cards({id , name, type, Metalused ,Weight, Color, Price, Status , image}) {
   return (
-    
+    <Link to ={`/detail/${id}`}>
     <div className='Card'>
         <div>
         <img src={image} className='jewel-img'></img>
@@ -15,6 +16,7 @@ function Cards({id , name, type, Metalused ,Weight, Color, Price, Status , image
        </div>
        
     </div>
+    </Link>
     
   )
 }
