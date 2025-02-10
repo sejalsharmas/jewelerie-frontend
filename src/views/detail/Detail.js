@@ -12,14 +12,14 @@ function Detail() {
 
 
     const loadJewelrieDetail = async (id) =>{
-        const response = await axios.get(`http://localhost:5001/jewelries/${id}` )
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/jewelries/${id}` )
         setJewelrie(response.data.data)
     }
 
     const deleteJewelrie = async (id) => {
       if (window.confirm('Are you sure you want to delete this car?')) {
         try {
-          await axios.delete(`http://localhost:5001/jewelries/${id}`);
+          await axios.delete(`${process.env.REACT_APP_API_URL}/jewelries/${id}`);
           toast.success('jewelerie deleted successfully!');
           setTimeout(() => navigate(-1), 2000); 
         } catch (err) {

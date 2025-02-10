@@ -20,7 +20,7 @@ function Add() {
 
     const Add = async () => {
         try {
-            await axios.post(`http://localhost:5001/jewelries`, {
+            await axios.post(`${process.env.REACT_APP_API_URL}/jewelries`, {
                 id: jewelerie.id,
                 name: jewelerie.name,
                 type: jewelerie.type,

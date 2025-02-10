@@ -12,7 +12,7 @@ function App() {
 
   const loadJewelrie = async() =>{
      console.log('Loading Jewlries...')
-     const response = await axios.get("http://localhost:5001/jewelries")
+     const response = await axios.get(`${process.env.REACT_APP_API_URL}/jewelries`)
 
      setJewelries(response.data.data)
     

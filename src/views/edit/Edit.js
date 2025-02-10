@@ -21,7 +21,7 @@ function Edit() {
   useEffect(() => {
     const fetchJewelerieDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/jewelries/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/jewelries/${id}`);
         console.log(response.data);
         setJewelerie(response.data.data || response.data);
       } catch (error) {
@@ -35,7 +35,7 @@ function Edit() {
 
   const editJewelerie = async () => {
     try {
-      await axios.put(`http://localhost:5001/jewelries/${id}`, jewelerie);
+      await axios.put(`${process.env.REACT_APP_API_URL}/jewelries/${id}`, jewelerie);
       alert("Jewelerie details updated successfully!");
       navigate(-1); 
     } catch (error) {
